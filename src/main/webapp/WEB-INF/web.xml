@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <context-param>
+        <param-name>wurfl</param-name>
+        <param-value>/WEB-INF/wurfl.zip</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>
+            net.sourceforge.wurfl.core.web.WURFLServletContextListener
+        </listener-class>
+    </listener>
+
+    <servlet>
+        <display-name>ResponsiveImage</display-name>
+        <servlet-name>ResponsiveImage</servlet-name>
+        <servlet-class>ResponsiveImage</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ResponsiveImage</servlet-name>
+        <url-pattern>/rimage/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
